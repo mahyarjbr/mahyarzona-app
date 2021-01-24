@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import productsRouter from "./Routes/ProductsRouters.js";
 import userRouter from "./Routes/UserRouters.js";
+import OrderRouter from "./Routes/OrderRouter.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 mongoose.connect("mongodb://localhost/mahyarzona", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -15,6 +16,7 @@ mongoose.connect("mongodb://localhost/mahyarzona", {
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productsRouter);
+app.use("/api/orders", OrderRouter);
 app.get("/", (req, res) => {
   res.send("server is ready");
 });
