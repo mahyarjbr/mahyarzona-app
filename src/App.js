@@ -1,4 +1,5 @@
 import data from "./data";
+import Products from "./Components/Products";
 
 function App() {
   return (
@@ -17,24 +18,7 @@ function App() {
       <main>
         <div className="row center">
           {data.products.map((product) => (
-            <div key={product._id} class="card">
-              <a href={`/product/${product._id}`}>
-                <img class="medium" src={product.image} alt={product.name} />
-              </a>
-              <div class="card-body">
-                <a href={`/product/${product._id}`}>
-                  <h2>{product.name}</h2>
-                </a>
-                <div class="rating">
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-                <div class="price">{product.price}T</div>
-              </div>
-            </div>
+            <Products key={product._id} product={product} />
           ))}
         </div>
       </main>
