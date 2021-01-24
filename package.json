@@ -1,39 +1,32 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-rating-stars-component": "^2.2.0",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
-  },
+  "name": "mahyarzona-appp",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahyarjbr/mahyarzona-app.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahyarjbr/mahyarzona-app/issues"
+  },
+  "homepage": "https://github.com/mahyarjbr/mahyarzona-app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.12"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "nodemon": "^2.0.7"
   }
 }
