@@ -1,5 +1,5 @@
 import express from "express";
-import  expressasyncHandler  from "express-async-handler";
+import expressasyncHandler from "express-async-handler";
 import Order from "../Models/OrderModel.js";
 import { isAuth } from "../Utils/Utils.js";
 
@@ -26,6 +26,19 @@ OrderRouter.post(
       res
         .status(201)
         .send({ message: "New Order Created", order: createdOrder });
+    }
+  })
+);
+
+OrderRouter.get(
+  "/:id",
+  isAuth,
+  expressasyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id);
+    if (order) {
+      res.send(order);
+    } else {
+      res.status(404).send({ message: "Order Not Found" });
     }
   })
 );
