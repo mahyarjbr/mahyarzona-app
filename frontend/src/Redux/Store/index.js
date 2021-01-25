@@ -11,7 +11,7 @@ const initialSate = {
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
-      paymentMethod:"PayPal"
+    paymentMethod: "PayPal",
   },
   userSignin: {
     userInfo: localStorage.getItem("userInfo")
@@ -24,7 +24,3 @@ export const store = createStore(
   initialSate,
   composeEnhancer(applyMiddleware(thunk))
 );
-
-//subscribe
-
-store.subscribe(() => console.log(store.getState()));

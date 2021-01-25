@@ -11,7 +11,7 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(productsAction());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       {loading ? (

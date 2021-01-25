@@ -16,7 +16,7 @@ const CardScreen = (props) => {
     if (productId) {
       dispatch(AddToCart(productId, qty));
     }
-  }, []);
+  }, [dispatch, productId, qty]);
 
   const checkoutHandler = () => {
     //

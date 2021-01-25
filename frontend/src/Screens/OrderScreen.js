@@ -13,7 +13,7 @@ const OrderScreen = (props) => {
 
   useEffect(() => {
     dispatch(orderDetail(orderId));
-  }, [dispatch]);
+  }, [dispatch, orderId]);
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -22,11 +22,10 @@ const OrderScreen = (props) => {
     <div>
       <div className="row top">
         <div className="col-2">
-            <h2>Order {order._id}</h2>
+          <h2>Order {order._id}</h2>
           <ul>
             <li>
               <div className="card card-body">
-
                 <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullname} <br />

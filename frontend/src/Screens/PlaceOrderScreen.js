@@ -9,7 +9,6 @@ const PlaceOrderScreen = (props) => {
   const cart = useSelector((state) => state.cart);
   const orderCreated = useSelector((state) => state.orderCreated);
   const { loading, success, error, order } = orderCreated;
-  console.log(success);
   const toPrice = (num) => Number(num.toFixed(2));
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
